@@ -19,10 +19,11 @@ function sanitisepassword ($password) {
   return $password;
 }
 
+
+
 if (isset($_POST['registerButton'])) {
   // sanitise all $input
   // usernames
-  $username = sanitizeFormInput($_POST['loginUsername']);
   $username = sanitizeFormInput($_POST['RegisterUsername']);
   // first and last names
   $firstName = sanitiseStrings($_POST['RegisterFirstName']);
@@ -33,6 +34,7 @@ if (isset($_POST['registerButton'])) {
   // passwords
   $password = sanitisepassword($_POST['password']);
   $confirmPassword = sanitisepassword($_POST['confirmPassword']);
+
 }
 
 ?>
