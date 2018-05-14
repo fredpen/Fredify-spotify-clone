@@ -35,7 +35,7 @@
       // username authentication
       private function validateUsername ($username) {
         if (strlen($username) > 25 || strlen($username) < 5) {
-          array_push($this->errorArray, "Your username must be between 5 and 25 characters");
+          array_push($this->errorArray, Constants::$usernameCharacter);
           return;
         }
         // check if username already exists
@@ -43,14 +43,14 @@
       // firstname authentication
       private function  validateFirstname($firstName) {
         if (strlen($firstName) > 25 || strlen($firstName) < 2) {
-          array_push($this->errorArray, "Your First name must be between 2 and 25 characters");
+          array_push($this->errorArray, Constants::$fistnameCharacter);
           return;
         }
       }
       // lastname authentication
       private function validateLastname ($lastName) {
         if (strlen($lastName) > 25 || strlen($lastName) < 2) {
-          array_push($this->errorArray, "Your last name must be betwwen 2 and 25 characters");
+          array_push($this->errorArray, Constants::$lastnameCharacter);
           return;
         }
       }
@@ -58,11 +58,11 @@
       // emails authentication
       private function validateEmails ($email, $confirmEmail) {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-          array_push($this->errorArray, "Email is invalid");
+          array_push($this->errorArray, Constants::$emailInvalid);
           return;
         }
         if ($email != $confirmEmail) {
-          array_push($this->errorArray, "Your Emails do not match");
+          array_push($this->errorArray, Constants::$emailDoNotMatch);
           return;
         }
         //check if the email already exists
@@ -71,15 +71,15 @@
       // passwords authentication
       private function validatePasswords ($password, $confirmPassword) {
         if ($password != $confirmPassword) {
-          array_push($this->errorArray, "Your Passwords do not match");
+          array_push($this->errorArray, Constants::$passwordDonNotMatch);
           return;
         }
         if (preg_match('/[^A-Za-z0-9]/', $password)) {
-          array_push($this->errorArray, "your password can only contain numbers and letters;");
+          array_push($this->errorArray, Constants::$passwordInvalid);
           return;
         }
         if (strlen($password) > 30 || strlen($password) < 5) {
-          array_push($this->errorArray, "Your password must be between 5 and 30 characters");
+          array_push($this->errorArray, Constants::$passwordCharacter);
           return;
         }
       }

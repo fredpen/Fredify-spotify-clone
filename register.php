@@ -1,5 +1,7 @@
 <?php
+  include ("includes/classes/Constants.php");
   include ("includes/classes/Account.php");
+
 
   $account = new Account();
 
@@ -31,19 +33,25 @@
 
     <form id="inputContainer" action="register.php" method="POST">
       <h2>Create your free account</h2>
-      <p><?php echo $account->getError("Your username must be between 5 and 25 characters") ?>
+      <p>
+        <?php echo $account->getError(Constants::$usernameCharacter) ?>
         <label for="RegisterUsername">Username</label>
         <input type="text" name="RegisterUsername" placeholder="e.g janedow401" required>
       </p>
       <p>
+        <?php echo $account->getError(Constants::$fistnameCharacter) ?>
         <label for="RegisterFirstName">First name</label>
         <input type="text" name="RegisterFirstName" placeholder="e.g Jane" required>
       </p>
       <p>
+        <?php echo $account->getError(Constants::$lastnameCharacter) ?>
         <label for="RegisterLastName">Last name</label>
         <input type="text" name="RegisterLastName" placeholder="e.g Dow" required>
       </p>
       <p>
+        <?php echo $account->getError(Constants::$emailInvalid);
+                echo $account->getError(Constants::$emailDoNotMatch);
+          ?>
         <label for="RegisterEmail">Email</label>
         <input type="email" name="RegisterEmail" placeholder="e.g janedow@gmail.com" required>
       </p>
@@ -52,6 +60,10 @@
         <input type="email" name="confirmRegisterEmail" placeholder="e.g janedow@gmail.com" required>
       </p>
       <p>
+        <?php echo $account->getError(Constants::$passwordInvalid);
+                echo $account->getError(Constants::$passwordCharacter);
+                echo $account->getError(Constants::$passwordDonNotMatch);
+          ?>
         <label for="password">Password</label>
         <input type="password" name="password" placeholder="password" required>
       </p>
