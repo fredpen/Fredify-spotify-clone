@@ -5,8 +5,9 @@
     private $errorArray;
 
     public function __construct() {
-      $this->$errorArray = array();
+      $this->errorArray = array();
       }
+
 
     public function register($username, $firstName, $lastName, $email, $confirmEmail, $password, $confirmPassword) {
       // validate all the input
@@ -15,12 +16,26 @@
       $this->validateLastname($lastName);
       $this->validateEmails($email, $confirmEmail);
       $this->validatePasswords($password, $confirmPassword);
+
+      if (empty($this->errorArray)) {
+        return true;
+        // insert the data into our database
+      }else {
+        return false;
+        }
       }
+
+      // function to output the error message
+    public function getError($error) {
+      if (!in_array($error, $this->errorArray)) {
+        $error = "";
+      }return "<span class='errorMessage'>$error</span>";
+    }
 
       // username authentication
       private function validateUsername ($username) {
-        if (srtlen($username) > 25 || strlen($username) < 5) {
-          array_push($this->$errorArray, "Your username must be between 5 and 25 characters");
+        if (strlen($username) > 25 || strlen($username) < 5) {
+          array_push($this->errorArray, "Your username must be between 5 and 25 characters");
           return;
         }
         // check if username already exists
@@ -60,15 +75,14 @@
           return;
         }
         if (preg_match('/[^A-Za-z0-9]/', $password)) {
-          array_push($this->$errorArray, "your password can only contain numbers and letters;");
+          array_push($this->errorArray, "your password can only contain numbers and letters;");
           return;
         }
-        if (strlen($password) > 30 || or strlen($password) < 5) {
-          array_push($this->$errorArray, "Your password must be between 5 and 30 characters")
+        if (strlen($password) > 30 || strlen($password) < 5) {
+          array_push($this->errorArray, "Your password must be between 5 and 30 characters");
+          return;
         }
       }
 
-  }
-
-
+    }
  ?>
