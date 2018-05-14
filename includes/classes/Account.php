@@ -38,8 +38,8 @@
           array_push($this->errorArray, "Your last name must be betwwen 2 and 25 characters");
           return;
         }
-
       }
+
       // emails authentication
       private function validateEmails ($email, $confirmEmail) {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -47,14 +47,25 @@
           return;
         }
         if ($email != $confirmEmail) {
-          array_push($this->errorArray, "Your Emails do not match")
+          array_push($this->errorArray, "Your Emails do not match");
+          return;
         }
         //check if the email already exists
       }
 
-      // emaipasswords authentication
+      // passwords authentication
       private function validatePasswords ($password, $confirmPassword) {
-
+        if ($password != $confirmPassword) {
+          array_push($this->errorArray, "Your Passwords do not match");
+          return;
+        }
+        if (preg_match('/[^A-Za-z0-9]/', $password)) {
+          array_push($this->$errorArray, "your password can only contain numbers and letters;");
+          return;
+        }
+        if (strlen($password) > 30 || or strlen($password) < 5) {
+          array_push($this->$errorArray, "Your password must be between 5 and 30 characters")
+        }
       }
 
   }
