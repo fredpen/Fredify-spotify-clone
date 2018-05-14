@@ -35,6 +35,8 @@ if (isset($_POST['registerButton'])) {
   $password = sanitisepassword($_POST['password']);
   $confirmPassword = sanitisepassword($_POST['confirmPassword']);
 
+  $account->register($lastName, $lastName, $email, $confirmEmail, $password, $confirmPassword);
+
 }
 
 ?>
