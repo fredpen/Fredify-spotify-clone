@@ -24,13 +24,13 @@ function sanitisepassword ($password) {
 if (isset($_POST['registerButton'])) {
   // sanitise all $input
   // usernames
-  $username = sanitizeFormInput($_POST['RegisterUsername']);
+  $username = sanitizeFormInput($_POST['username']);
   // first and last names
-  $firstName = sanitiseStrings($_POST['RegisterFirstName']);
-  $lastName = sanitiseStrings($_POST['RegisterLastName']);
+  $firstName = sanitiseStrings($_POST['firstname']);
+  $lastName = sanitiseStrings($_POST['lastname']);
   // emails
-  $email = sanitizeFormInput($_POST['RegisterEmail']);
-  $confirmEmail = sanitizeFormInput($_POST['confirmRegisterEmail']);
+  $email = sanitizeFormInput($_POST['email']);
+  $confirmEmail = sanitizeFormInput($_POST['confirmEmail']);
   // passwords
   $password = sanitisepassword($_POST['password']);
   $confirmPassword = sanitisepassword($_POST['confirmPassword']);
