@@ -1,6 +1,7 @@
 html,body{
   margin: 0;
   padding: 0;
+  height: 100%;
 }
 
 
@@ -12,4 +13,20 @@ html,body{
     height: 100vh;
     background-size: cover;
     display: table;
+}
+
+#loginContainer * {
+  line-height: 1em;
+  color: white;
+  box-sizing: border-box;
+  font-weight: normal;
+  font-family: "helvetica Neue", "helvetica", "Arial", "sans-serif";
+}
+
+#loginContainer{
+  width: 80%;
+  margin: 0 auto;
+  max-width: 1024px;
+  position: relative;
+
 }
