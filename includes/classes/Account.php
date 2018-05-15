@@ -2,9 +2,11 @@
 
   class Account  {
 
+    private $con;
     private $errorArray;
 
-    public function __construct() {
+    public function __construct($con) {
+      $this->con = $con
       $this->errorArray = array();
       }
 
@@ -18,7 +20,7 @@
       $this->validatePasswords($password, $confirmPassword);
 
       if (empty($this->errorArray)) {
-        return true;
+        return insertUserDetails($username, $firstName, $lastName, $email, $password);
         // insert the data into our database
       }else {
         return false;
@@ -30,6 +32,16 @@
       if (!in_array($error, $this->errorArray)) {
         $error = "";
       }return "<span class='errorMessage'>$error</span>";
+    }
+
+    // insert user details into the database after all vetting is done
+    private function insertUserDetails($username, $firstName, $lastName, $email, $password) {
+      $encryptedPassword = md5($password);
+      $profilePic = "assets/images/profile-pics/generic-pic.png";
+      $date = date("Y-m-d");
+
+      $result = mysqli_query($this->con, "INSERT INTO users VALUES ('', '$username', '$firstName', '$lastName', '$email', '$encryptedPassword', '$date', '$profilePic')");
+      return $result;
     }
 
       // username authentication
