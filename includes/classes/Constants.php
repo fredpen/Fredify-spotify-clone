@@ -13,5 +13,8 @@
     public static $passwordCharacter = "Your password must be between 5 and 30 characters";
     public static $passwordInvalid = "your password can only contain numbers and letters";
 
+
+    public static $loginFailed = "Your password or Username is incorrect";
+
       }
  ?>

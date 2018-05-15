@@ -27,6 +27,20 @@
         }
       }
 
+      // function to check authenticity of log in requests
+      public function login ($loginUsername, $password){
+        $password = md5($password);
+        $results = mysqli_query($this->con, "SELECT * FROM users WHERE username = '$loginUsername' AND password = '$password' ");
+
+        if (mysqli_num_rows($results) == 1) {
+          return true;
+        }else {
+          array_push($this->errorArray, Constants::$loginFailed);
+          return false;
+
+        }
+      }
+
       // function to output the error message
     public function getError($error) {
       if (!in_array($error, $this->errorArray)) {
@@ -38,7 +52,7 @@
     private function insertUserDetails($username, $firstName, $lastName, $email, $password) {
       $encryptedPassword = md5($password);
       $profilePic = "assets/images/profile-pics/generic-pic.png";
-      $date = date("Y-m-d h:i:s a");
+      $date = date("Y-m-d h:i:s");
 
       $result = mysqli_query($this->con, "INSERT INTO users VALUES ('', '$username', '$firstName', '$lastName', '$email', '$encryptedPassword', '$date', '$profilePic')");
       return $result;

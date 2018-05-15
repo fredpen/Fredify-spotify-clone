@@ -26,7 +26,7 @@ function getInputValue ($name) {
 
     <form id="inputContainer" action="register.php" method="POST">
       <h2>Login to your Fredify account</h2>
-      <p>
+      <p><?php echo $account->getError(Constants::$loginFailed) ?>
         <label for="loginUsername">Username</label>
         <input type="text" name="loginUsername" placeholder="username" required>
       </p>
