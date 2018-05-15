@@ -6,6 +6,7 @@
 
     $loginSucces = $account->login($loginUsername, $password);
     if ($loginSucces == true) {
+      $_SESSION['userLoggedIn'] = $loginUsername;
       header("Location: index.php");
     }
 

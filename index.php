@@ -1,3 +1,15 @@
+<?php
+  include ("includes/database-config.php");
+
+  if (isset($_SESSION['userLoggedIn'])) {
+    $currentUser = $_SESSION['userLoggedIn'];
+  }
+    else {
+    header ("Location: register.php");
+  }
+ ?>
+
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
