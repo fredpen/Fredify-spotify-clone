@@ -6,7 +6,7 @@
     private $errorArray;
 
     public function __construct($con) {
-      $this->con = $con
+      $this->con = $con;
       $this->errorArray = array();
       }
 
@@ -20,7 +20,7 @@
       $this->validatePasswords($password, $confirmPassword);
 
       if (empty($this->errorArray)) {
-        return insertUserDetails($username, $firstName, $lastName, $email, $password);
+        return $this->insertUserDetails($username, $firstName, $lastName, $email, $password);
         // insert the data into our database
       }else {
         return false;
@@ -38,7 +38,7 @@
     private function insertUserDetails($username, $firstName, $lastName, $email, $password) {
       $encryptedPassword = md5($password);
       $profilePic = "assets/images/profile-pics/generic-pic.png";
-      $date = date("Y-m-d");
+      $date = date("Y-m-d h:i:s a");
 
       $result = mysqli_query($this->con, "INSERT INTO users VALUES ('', '$username', '$firstName', '$lastName', '$email', '$encryptedPassword', '$date', '$profilePic')");
       return $result;
