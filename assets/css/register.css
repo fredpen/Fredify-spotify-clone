@@ -36,6 +36,7 @@ html,body{
   border-right: 1px solid #9E9E9E;
   padding: 45px;
   float: left;
+
 }
 
 #inputContainer h2{
@@ -100,4 +101,18 @@ width: 100%;
 
 #inputContainer button:hover {
   cursor: pointer;
+}
+
+.hasAccountText span{
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.hasAccountText{
+  text-align: center;
+}
+
+#registerForm,
+#loginForm{
+  display: none;
 }

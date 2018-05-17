@@ -14,8 +14,9 @@ function getInputValue ($name) {
     echo $_POST[$name];
   }
 }
-
  ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -24,15 +25,33 @@ function getInputValue ($name) {
     <title>Welcome to Fredify!</title>
     <link rel="stylesheet" href="assets/css/register.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+    <script src="assets/js/jQuery"></script>
   </head>
 
   <body>
+      <?php
+        if (isset($_POST['registerButton'])) {
+          echo '<script>
+                    $(document).ready(function() {
+                    $("#loginForm").hide();
+                    $("#registerForm").show();
+                  });
+                </script>';
+        }else {
+          echo '<script>
+                    $(document).ready(function() {
+                    $("#loginForm").show();
+                    $("#registerForm").hide();
+                });
+                </script>';
+        };
+     ?>
     <div id="background">
       <div id="loginContainer">
         <div id="inputContainer">
-           <form class="inputContainer" action="register.php" method="POST">
-            <h2>Login to your Fredify account</h2>
-            <p>
+           <form id="loginForm" action="register.php" method="POST">
+            <h2>Login to your account</h2>
+            <p><?php echo $account->getError(Constants::$loginFailed) ?>
               <label for="loginUsername">Username</label>
               <input type="text" name="loginUsername" placeholder="e.g janedow401" required>
             </p>
@@ -41,10 +60,13 @@ function getInputValue ($name) {
               <input type="password" name="loginPassword" placeholder="password" required>
             </p>
             <button type="submit" name="loginButton">Log in</button>
+            <div class="hasAccountText">
+              <span id="hideSignIn">Don't have an account yet? Signup here</span>
+            </div>
           </form>
 
           <!-- =============================================== -->
-          <form class="inputContainer" action="register.php" method="POST">
+          <form id="registerForm" action="register.php" method="POST">
             <h2>Create your free account</h2>
             <p>
               <?php echo $account->getError(Constants::$usernameCharacter) ?>
@@ -84,11 +106,16 @@ function getInputValue ($name) {
               <label for="confirmPassword">Password</label>
               <input type="password" name="confirmPassword" placeholder="password" required>
             </p>
-            <button type="submit" name="registerButton">Log in</button>
+            <button type="submit" name="registerButton">Register</button>
+            <div class="hasAccountText">
+              <span id="hideRegister">Already have an account? Sign in Here</span>
+            </div>
           </form>
         </div>
       </div>
     </div>
+    <script src="assets/js/jQuery"></script>
+    <script src="assets/js/register.js"></script>
   </body>
 
 </html>
