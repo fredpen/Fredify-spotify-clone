@@ -14,14 +14,18 @@
   <head>
     <meta charset="utf-8">
     <title>welcome</title>
-    <link rel="shortcut icon" href="assets/images/icons/favicon.jpg">
+    <link rel="shortcut icon" href="assets/images/icons/navIcon.png">
     <link rel="stylesheet" href="assets/css/styles.css">
   </head>
   <body>
     <div id="mainContainer">
       <div id="topContainer">
         <div id="NavBarContainer">
-          
+          <nav class="navBar">
+            <a href="index.php" class="logo">
+              <img src="assets/images/icons/logo.png" alt="music logo">
+            </a>
+          </nav>
         </div>
       </div>
       <div id="nowPlayingBarCointaner">

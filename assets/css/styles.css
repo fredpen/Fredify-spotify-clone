@@ -170,5 +170,15 @@ html,body{
   height: 100vh;
   position: fixed;
   left: 0;
-t op: 0;
+  top: 0;
+}
+
+#NavBarContainer .navBar{
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+
+#NavBarContainer .navBar img{
+  width: 32px;
 }
