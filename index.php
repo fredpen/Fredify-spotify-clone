@@ -1,6 +1,5 @@
 <?php
   include ("includes/database-config.php");
-
   if (isset($_SESSION['userLoggedIn'])) {
     $currentUser = $_SESSION['userLoggedIn'];
   }

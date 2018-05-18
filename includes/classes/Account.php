@@ -32,6 +32,7 @@
         $password = md5($password);
         $results = mysqli_query($this->con, "SELECT * FROM users WHERE username = '$loginUsername' AND password = '$password' ");
 
+
         if (mysqli_num_rows($results) == 1) {
           return true;
         }else {
