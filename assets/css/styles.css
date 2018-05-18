@@ -158,3 +158,17 @@ html,body{
 .volumeBar .progressbar{
   width: 125px;
 }
+
+#topContainer{
+  width: 100%;
+  height: 100%;
+}
+
+#NavBarContainer{
+  background: #000000ed;
+  width: 220px;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+t op: 0;
+}
