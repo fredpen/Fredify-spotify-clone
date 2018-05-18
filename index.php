@@ -25,6 +25,14 @@
 
         <div id="nowPlayingIcon">
 
+          <div class="content">
+
+            <span class="albumLink">
+              <img class="albumartwork" src="assets/images/icons/marley.jpeg" alt="albumartwork">
+            </span>
+
+          </div>
+
         </div>
 
         <div id="nowPlayingButtons">
@@ -52,6 +60,22 @@
                 <img src="assets/images/icons/repeat.png" alt="repeat">
               </button>
 
+            </div>
+
+            <div class="playBackBar">
+
+                <span class="progressTime current">0:00</span>
+                <div class="progressbar">
+
+                  <div class="progressbarBg">
+
+                    <div class="progress"></div>
+
+                  </div>
+
+
+                </div>
+                <span class="progressTime remaining">0:00</span>
             </div>
 
           </div>
