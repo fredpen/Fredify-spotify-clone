@@ -113,7 +113,7 @@ function getInputValue ($name) {
           </form>
         </div>
 
-        <div class="logintext">
+        <div id="logintext">
           <h1>Get great music, right now</h1>
           <h2>Listen to loads of songs for free</h2>
           <ul>

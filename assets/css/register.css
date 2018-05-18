@@ -33,7 +33,6 @@ html,body{
 
 #inputContainer{
   width: 45%;
-  border-right: 1px solid #9E9E9E;
   padding: 45px;
   float: left;
 
@@ -81,6 +80,7 @@ html,body{
 }
 
 #inputContainer label{
+  display: block;
   color: #a0a0a0;
   margin-top: 15px;
   font-size: 13px;
@@ -116,4 +116,38 @@ width: 100%;
 #registerForm,
 #loginForm{
   display: none;
+}
+
+#logintext{
+  padding: 10px 35px;
+  display: table-cell;
+  height: 100vh;
+  border-left: 2px solid #868282db;
+}
+
+#logintext h1 {
+  font-size: 60px;
+  color: #0bf10b9c;
+  font-weight: bold;
+}
+
+#logintext h2 {
+  padding: 35px 0;
+}
+
+#logintext ul {
+  padding: 0;
+}
+
+#logintext li {
+  font-size: 20px;
+  list-style-type: none;
+  padding: 10px;
+}
+
+#inputContainer .errorMessage{
+  display: block;
+  font-size: 15px;
+  color: #63b72b;
+
 }
