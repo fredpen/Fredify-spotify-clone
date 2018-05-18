@@ -23,8 +23,7 @@ function getInputValue ($name) {
   </head>
 
   <body>
-<<<<<<< HEAD
-=======
+
       <?php
         if (isset($_POST['registerButton'])) {
           echo '<script>
@@ -60,7 +59,7 @@ function getInputValue ($name) {
               <span id="hideSignIn">Don't have an account yet? Signup here</span>
             </div>
           </form>
->>>>>>> parent of e59f483... persisting the username during log in to increase user experience
+
 
     <form id="inputContainer" action="register.php" method="POST">
       <h2>Login to your Fredify account</h2>
