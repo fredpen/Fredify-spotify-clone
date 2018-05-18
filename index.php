@@ -14,10 +14,13 @@
   <head>
     <meta charset="utf-8">
     <title>welcome</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
   </head>
 
   <body>
-    hello
+    <div id="nowPlayingBarCointaner">
+
+    </div>
   </body>
 
 </html>

@@ -1,0 +1,12 @@
+html,body{
+  margin: 0;
+  padding: 0;
+}
+
+#nowPlayingBarCointaner{
+  height: 100px;
+  background: rgb(47, 43, 43);
+  bottom: 0;
+  position: fixed;
+  width: 100%;
+}
