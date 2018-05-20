@@ -203,6 +203,10 @@ html,body{
   color: #a0a0a0;
 }
 
+.navItem .navItemLink:hover{
+  color: #fff
+}
+
 
 .group .navItem{
   display: flex;

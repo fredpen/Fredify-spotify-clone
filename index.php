@@ -20,6 +20,7 @@
   <body>
     <div id="mainContainer">
       <div id="topContainer">
+        <!--THIS HOUSES THE BOTH NAVBAR AND THE MAIN BAR-->
         <div id="NavBarContainer">
           <nav class="navBar">
             <a href="index.php" class="logo">
