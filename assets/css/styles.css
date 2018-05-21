@@ -4,8 +4,14 @@ html,body{
   box-sizing: border-box;
 }
 
+body{
+  background: #181818;
+  font-size: 14px;
+  min-width: 720px;
+}
+
 *{
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family:'Lato', sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff;
 }
 
@@ -17,7 +23,7 @@ html,body{
 }
 
 #nowPlayingBar{
-  height: 90px;
+  /* height: 90px; */
   padding: 16px;
   display: flex;
 }
@@ -207,10 +213,19 @@ html,body{
   color: #fff
 }
 
-
 .group .navItem{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+
+#mainViewContainer{
+  margin-left: 220px;
+  width: calc(100% - 220px);
+  padding-bottom: 90px;
+}
+
+#mainContent{
+  margin: 0 20px;
 }

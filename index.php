@@ -1,29 +1,17 @@
-<?php
-  include ("includes/database-config.php");
-  if (isset($_SESSION['userLoggedIn'])) {
-    $currentUser = $_SESSION['userLoggedIn'];
-  }
-    else {
-    header ("Location: register.php");
-  }
- ?>
+<?php include ("includes/header.php"); ?>
 
+  <h1>You might also like</h1>
 
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>welcome</title>
-    <link rel="shortcut icon" href="assets/images/icons/navIcon.png">
-    <link rel="stylesheet" href="assets/css/styles.css">
-  </head>
-  <body>
-    <div id="mainContainer">
-      <div id="topContainer">
-        <!--THIS HOUSES THE BOTH NAVBAR AND THE MAIN BAR-->
-      <?php include ("includes/navBarContainer.php"); ?>
-      </div>
-      <?php include ("includes/nowPlayingBar.php"); ?>
+    <div class="gridViewContainer">
+      <?php
+        $albumQuery = mysqli_query($con, "SELECT * FROM albums ORDER BY RAND() LIMIT 10");
+        while ($row = mysqli_fetch_array($albumQuery)) {
+          echo
+            "<div class='gridViewItem'>
+              <img src='" . $row['artworkPath'] . "'>
+              <div> ". $row['title'] . "</div>
+            </div>";
+        };
+     ?>
     </div>
-  </body>
-</html>
+<?php include ("includes/footer.php"); ?>
