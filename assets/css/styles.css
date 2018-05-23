@@ -229,3 +229,47 @@ body{
 #mainContent{
   margin: 0 20px;
 }
+
+#mainContent .gridViewContainer{
+    display: flex;
+    width: 1000px;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+.pageHeadingBig{
+  /* padding: 20px; */
+  text-align: center;
+  text-transform: capitalize;
+  }
+
+.gridViewItem{
+  display:inline-block;
+  margin:25px;
+  width:29%;
+  height: 209px;
+  max-width:200px;
+  min-width:150px;
+  margin-bottom: 20px;
+}
+
+.gridViewItem img{
+  width: 100%;
+  height: 100%;
+}
+
+#mainContent .navItemInfo{
+  text-align: center;
+  padding: 7px;
+  font-weight: 300;
+  text-transform: capitalize;
+  font-style: oblique;
+  color: #a4a9a7c4;
+  letter-spacing: 1px;
+  }
+
+#mainContent .gridViewItem a{
+  text-decoration: none;
+}

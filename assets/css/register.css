@@ -154,3 +154,9 @@ width: 100%;
   color: green;
   font-size: 150%;
 }
+
+input:hover,
+input:hover{
+  outline: auto;
+  outline-color: #9e9e9e52;
+}

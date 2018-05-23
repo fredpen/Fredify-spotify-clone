@@ -1,6 +1,6 @@
 <?php include ("includes/header.php"); ?>
 
-  <h1>You might also like</h1>
+  <h1 class="pageHeadingBig">You might also like</h1>
 
     <div class="gridViewContainer">
       <?php
@@ -8,9 +8,11 @@
         while ($row = mysqli_fetch_array($albumQuery)) {
           echo
             "<div class='gridViewItem'>
+              <a href='album.php?id=" . $row['id'] . "'>
               <img src='" . $row['artworkPath'] . "'>
-              <div> ". $row['title'] . "</div>
-            </div>";
+              <div class='navItemInfo'> ". $row['title'] . "</div>
+            </div>
+            </a>";
         };
      ?>
     </div>
