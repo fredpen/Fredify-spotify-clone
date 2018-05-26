@@ -6,17 +6,40 @@
   else {
     header("location: index.php");
   }
-  // the id of the album is used to track the artist from the database
-  // $albumQuery = mysqli_query($con, "SELECT * FROM albums WHERE id='$albumId'");
-  // $album = mysqli_fetch_array($albumQuery);
-  // $artistId = $album['artist'];
-  //
-  $album = new Album($con, $albumId);
-  $artistId = $album->getAlbum();
-  echo "<div class=''>" . $album->getTitle() . "</div>";
-  $artist = new Artist($con, $artistId);
-  echo $artist->getName();
 
+  $album = new Album($con, $albumId);
 
    ?>
+
+   <div class="infoEntity">
+     <section class="leftSection">
+      <img src="<?php echo $album->getArtworkPath(); ?>" alt="">
+     </section>
+     <section class="rightSection">
+       <h2><?php echo $album->getTitle(); ?></h2>
+       <p>by <?php echo $album->getArtist(); ?></p>
+       <p><?php echo $album->getNumberOfSongs();
+            if ($album->getNumberOfSongs() > 1) {
+              echo " songs";
+            }else {
+              echo " song";
+            }
+          ?>
+       </p>
+     </section>
+   </div>
+
+   <div class="trackListContainer">
+     <ul class="trackList">
+       <?php
+          $songIdArray = $album->getSongIds();
+          foreach ($songIdArray as $songId) {
+            echo $songId;
+          }
+        ?>
+     </ul>
+   </div>
+
+
+
 <?php include ("includes/footer.php"); ?>

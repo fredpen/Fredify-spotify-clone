@@ -13,6 +13,7 @@ body{
 *{
   font-family:'Lato', sans-serif, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #fff;
+  box-sizing: border-box;
 }
 
 #nowPlayingBarCointaner{
@@ -272,4 +273,35 @@ body{
 
 #mainContent .gridViewItem a{
   text-decoration: none;
+}
+
+#mainContent .infoEntity{
+  padding: 40px 0 10px 0;
+  display: flex;
+  width: 100%;
+}
+
+.infoEntity .leftSection{
+  width: 20%;
+  max-width: 500px;
+}
+
+.infoEntity .leftSection img{
+  width: 100%;
+}
+
+.infoEntity .rightSection{
+  width: 80%;
+  padding: 0 10px 10px 20px;
+}
+
+.infoEntity .rightSection h2{
+  margin-top: 0;
+  font-size: 2em;
+  margin-bottom: 5px;
+}
+
+.infoEntity .rightSection p{
+  color: #807e7e;
+  font-weight: 600;
 }
